@@ -13,5 +13,6 @@ private static final Logger logger = LoggerFactory.getLogger(Application.class);
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 		logger.info("Hello Spring Boot");
+		logger.info("Hello Again");
 	}
 }
