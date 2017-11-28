@@ -19,6 +19,10 @@ Dwarf dopey = new Dwarf();
 dopey.setName("Dopey");
 dopey.setAuthor("Disney");
 dopey.setImage("Dopey.png");
+
+dwarfs.add(sleepy);
+dwarfs.add(happy);
+dwarfs.add(dopey);
 	}
 
 }
