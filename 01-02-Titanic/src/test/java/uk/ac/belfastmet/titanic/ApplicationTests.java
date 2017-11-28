@@ -1,4 +1,4 @@
-package uk.ac.belfastmet.hellospringboot;
+package uk.ac.belfastmet.titanic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
