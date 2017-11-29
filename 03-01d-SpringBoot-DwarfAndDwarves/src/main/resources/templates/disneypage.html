@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
   <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title th:text="${pageTitle}"> Generic Page Title </title>
 </head>
 <body>
 
@@ -28,34 +29,11 @@
        </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Happy</td>
-       <td> <img src =../static/dwarf-images/Happy.png width = 100 height = 150 /></td>
+      <tr th:each = "dwarf : ${dwarfs}">
+        <td th:text = "${dwarf.name}">Happy</td>
+       <td> <img src ="../static/dwarf-images/Happy.png" th:src="${dwarf.image}" width = "100" height = "150" /></td>
       </tr>    
-      <tr>
-        <td>Sleepy</td>
-       <td> <img src =../static/dwarf-images/Sleepy.png width = 100 height = 150 /></td>
-      </tr>  
-      <tr>
-        <td>Dopey</td>
-       <td> <img src =../static/dwarf-images/Dopey.png width = 100 height = 150 /></td>
-      </tr>  
-      <tr>
-        <td>Bashful</td>
-       <td> <img src =../static/dwarf-images/Bashful.png width = 100 height = 150 /></td>
-      </tr>  
-      <tr>
-        <td>Grumpy</td>
-       <td> <img src =../static/dwarf-images/Grumpy.png width = 100 height = 150 /></td>
-      </tr>  
-      <tr>
-        <td>Sneezy</td>
-       <td> <img src =../static/dwarf-images/Sneezy.png width = 100 height = 150 /></td>
-      </tr>  
-      <tr>
-        <td>Doc</td>
-       <td> <img src =../static/dwarf-images/Doc.png width = 100 height = 150 /></td>
-      </tr>  
+      
     </tbody>
   </table>
 </div>
