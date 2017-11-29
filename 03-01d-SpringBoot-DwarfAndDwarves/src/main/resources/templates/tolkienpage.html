@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title th:text="${pageTitle}"> Generic Page Title </title>
+</head>
+<body>
+
+<nav th:replace="layout/nav :: navFragment"></nav>
+
+<div class = "jumbotron text-center">
+
+
+<h1>Tolkien Dwarves</h1>
+<h2></h2>
+<br />
+
+</div>
+<div class="container">
+  
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Dwarf Name</th>
+        <th>Dwarf Image</th>
+       </tr>
+    </thead>
+    <tbody>
+      <tr th:each = "dwarf : ${dwarves}">
+        <td th:text = "${dwarf.name}">Happy</td>
+       <td> <img src ="../static/dwarf-images/Happy.png" th:src="@{/} + ${dwarf.image}" width = "100" height = "150" /></td>
+      </tr>    
+      
+    </tbody>
+  </table>
+  
+  <footer th:replace="layout/footer :: footerFragment"></footer>
+  
+</div>
+
+</body>
+</html>
