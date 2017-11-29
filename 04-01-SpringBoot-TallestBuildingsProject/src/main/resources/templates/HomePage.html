@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	
+	<nav th:replace="layout/nav :: navFragment"></nav>
+
+
+			<h1>This website is all about the BIGGEST BUILDINGS IN THE WORLD</h1>
+		<img src="big buildings.jpg" height="450" width="750" />
+
+
+
+		<h1>Please click the appropriate links to see information on the buildings in each category!</h1>
+		<div class="container">
+
+			<button type="button" class="btn btn-success">Largest Floor Area</button>
+
+			<button type="button" class="btn btn-warning">Largest Footprint</button>
+			
+			<button type="button" class="btn btn-danger">Largest Usable Volume</button>
+				
+				<footer th:replace="layout/footer :: footerFragment"></footer>
+				
+		</div>
+</body>
+</html>
