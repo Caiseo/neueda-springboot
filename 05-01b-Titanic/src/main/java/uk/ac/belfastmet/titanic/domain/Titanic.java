@@ -16,20 +16,20 @@ public class Titanic {
 	@GeneratedValue
 
 	private Integer passengerId;
-	private int survived;
-	private int pclass;
+	private Integer survived;
+	private Integer pclass;
 	private String name;
 	private String sex;
-	private int age;
-	private int sibsp;
-	private int parch;
+	private Float age;
+	private Integer sibSp;
+	private Integer parch;
 	private String ticket;
-	private double fare;
+	private Float fare;
 	private String cabin;
 	private String embarked;
 
-	public Titanic(Integer passengerId, int survived, int pclass, String name, String sex, int age, int sibsp,
-			int parch, String ticket, double fare, String cabin, String embarked) {
+	public Titanic(Integer passengerId, Integer survived, Integer pclass, String name, String sex, Float age,
+			Integer sibSp, Integer parch, String ticket, Float fare, String cabin, String embarked) {
 		super();
 		this.passengerId = passengerId;
 		this.survived = survived;
@@ -37,12 +37,13 @@ public class Titanic {
 		this.name = name;
 		this.sex = sex;
 		this.age = age;
-		this.sibsp = sibsp;
+		this.sibSp = sibSp;
 		this.parch = parch;
 		this.ticket = ticket;
 		this.fare = fare;
 		this.cabin = cabin;
 		this.embarked = embarked;
+
 	}
 
 	public Integer getPassengerId() {
@@ -53,19 +54,19 @@ public class Titanic {
 		this.passengerId = passengerId;
 	}
 
-	public int getSurvived() {
+	public Integer getSurvived() {
 		return survived;
 	}
 
-	public void setSurvived(int survived) {
+	public void setSurvived(Integer survived) {
 		this.survived = survived;
 	}
 
-	public int getPclass() {
+	public Integer getPclass() {
 		return pclass;
 	}
 
-	public void setPclass(int pclass) {
+	public void setPclass(Integer pclass) {
 		this.pclass = pclass;
 	}
 
@@ -85,27 +86,27 @@ public class Titanic {
 		this.sex = sex;
 	}
 
-	public int getAge() {
+	public Float getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Float age) {
 		this.age = age;
 	}
 
-	public int getSibsp() {
-		return sibsp;
+	public Integer getSibSp() {
+		return sibSp;
 	}
 
-	public void setSibsp(int sibsp) {
-		this.sibsp = sibsp;
+	public void setSibSp(Integer sibSp) {
+		this.sibSp = sibSp;
 	}
 
-	public int getParch() {
+	public Integer getParch() {
 		return parch;
 	}
 
-	public void setParch(int parch) {
+	public void setParch(Integer parch) {
 		this.parch = parch;
 	}
 
@@ -117,11 +118,11 @@ public class Titanic {
 		this.ticket = ticket;
 	}
 
-	public double getFare() {
+	public Float getFare() {
 		return fare;
 	}
 
-	public void setFare(double fare) {
+	public void setFare(Float fare) {
 		this.fare = fare;
 	}
 
