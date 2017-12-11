@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import uk.ac.belfastmet.titanic.domain.Titanic;
 import uk.ac.belfastmet.titanic.repository.PassengerRepository;
 
 
@@ -24,6 +23,8 @@ public class PassengerController {
 
 	@GetMapping("/passengersPage")
 	public String passenger(Model model) {
-		return ("passengerPage");
+		model.addAttribute("pageTitle", "Passengers!");
+		model.addAttribute("passengers", titanicRepository.findAll());
+		return ("passengersPage");
 	}
 }

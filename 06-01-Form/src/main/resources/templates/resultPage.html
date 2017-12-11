@@ -15,27 +15,15 @@
 </head>
 <body>
 
-	<nav th:replace="layout/nav :: navFragment"></nav>
+	<div class="jumbotron text-center">
+		<h1>Form Result</h1>
+				<br />
+	</div>
 
-	<div class="jumbotron">
-		<h1>Passenger</h1>
-	</div>
 	<div class="container">
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>Name</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="titPass:${passengers}">
-					<td th:text="${titPass.name}"></td>
-					<td th:text="${titPass.age}"></td>
-					<td th:text="${titPass.fare}"></td>
-				</tr>
-			</tbody>
-		</table>
+	<p th:text = "${'Hello, ' + firstname + ' ' + lastname}">Result Page</p>
 	</div>
+
 
 </body>
 </html>
