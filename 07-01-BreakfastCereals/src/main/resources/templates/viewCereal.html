@@ -16,7 +16,7 @@
 <body>
 
 	<div class="jumbotron">
-		<h1 th:each="cereal:${cereals}" th:text="${cereal.cerealName}"></h1>
+		<h1 th:each="cereal:${cereal}" th:text="${cereal.name}"></h1>
 	</div>
 	<div class="container">
 		<table class="table table-striped">

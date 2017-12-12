@@ -19,6 +19,7 @@
 <body>
 	
 	<div class="jumbotron text-center">
+	<h1 th:each="cereal:${cereal}" th:text="${cereal.name}"></h1>
 
 		<h1 th:text="${title}">Create</h1>
 		<br />
@@ -33,9 +34,10 @@
 			<!-- hidden field is important! -->
 			<input type="hidden" th:field="${cereal.cerealId}" />
 
-			<div class="form-group is-invalid"
-				th:classappend="${#fields.hasErrors('manufacturer')}? 'has-error'">
-				<label class="col-md-2">Manufacturer</label>
+			<label class="col-md-2">Manufacturer</label>
+			<div class="form-group">
+				
+				
 				<div class="col-md-10 control-label">
 					<input type="text" class="form-control"
 						th:field="${cereal.manufacturer}" /> <span
