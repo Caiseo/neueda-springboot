@@ -36,6 +36,22 @@ public class HomeController {
 		return "viewCereal";
 
 	}
+	
+	@GetMapping("/cereal/edit/cerealId")
+	public String editCereal(@PathVariable("cerealId") Integer cerealId, Model model) {
+		
+		model.addAttribute("pageTitle", "Edit Cereal");
+		model.addAttribute("cereal", cerealRepository.findOne(cerealId));
+		return "editCereal";
+}
+	
+	@GetMapping("/cereal/delete/cerealId")
+	public String deleteCereal(@PathVariable("cerealId") Integer cerealId) {
+		
+		cerealRepository.delete(cerealId);
+		return "redirect:/";
+		
+	}
 
 	@GetMapping("/cereal/add")
 	public String createCereal(Model model) {
@@ -44,6 +60,11 @@ public class HomeController {
 		return "editCereal";
 
 	}
+	
+	
+	
+	
+	
 
 	@PostMapping("/cereal/save")
 	public String saveCereal(@Valid Cereal cereal, BindingResult bindingResult, Model model) {
