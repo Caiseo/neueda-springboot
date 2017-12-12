@@ -15,12 +15,31 @@
 </head>
 <body>
 
-	<div class="jumbotron text-center">
+	<div class="jumbotron">
 		<h1>Load of Cereal</h1>
-		<h2></h2>
-		<br />
 	</div>
-	<div class="container"></div>
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Manufacturer</th>
+					<th>Name</th>
+					<th>Calories</th>
+					<th>Fat</th>
+					<th>Links</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cereal:${cereals}">
+					<td th:text="${cereal.manufacturer}"></td>
+					<td th:text="${cereal.name}"></td>
+					<td th:text="${cereal.calories}"></td>
+					<td th:text="${cereal.fat}"></td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 </body>
 </html>

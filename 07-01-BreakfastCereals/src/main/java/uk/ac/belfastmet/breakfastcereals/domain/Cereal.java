@@ -4,19 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+import org.hibernate.validator.constraints.NotEmpty;
 
+@Entity
 public class Cereal {
-	public Cereal() {
-		super();
-	}
+	
 
 	@Id
 	@GeneratedValue
 
 	private Integer cerealId;
+	@NotEmpty
 	private String manufacturer;
-	private String cereal;
+	@NotEmpty
+	private String name;
 	private Integer energy;
 	private Integer calories;
 	private Float protein;
@@ -28,14 +29,18 @@ public class Cereal {
 	private Float sodium;
 	private Float salt;
 	private Float iron;
+	
+		public Cereal() {
+		super();
+	}
 
-	public Cereal(Integer cerealId, String manufacturer, String cereal, Integer energy, Integer calories, Float protein,
+	public Cereal(Integer cerealId, String manufacturer, String name, Integer energy, Integer calories, Float protein,
 			Float carbohydrates, Float sugars, Float fat, Float saturates, Float fibre, Float sodium, Float salt,
 			Float iron) {
 		super();
 		this.cerealId = cerealId;
 		this.manufacturer = manufacturer;
-		this.cereal = cereal;
+		this.name = name;
 		this.energy = energy;
 		this.calories = calories;
 		this.protein = protein;
@@ -65,12 +70,12 @@ public class Cereal {
 		this.manufacturer = manufacturer;
 	}
 
-	public String getCereal() {
-		return cereal;
+	public String getName() {
+		return name;
 	}
 
-	public void setCereal(String cereal) {
-		this.cereal = cereal;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Integer getEnergy() {
@@ -160,6 +165,5 @@ public class Cereal {
 	public void setIron(Float iron) {
 		this.iron = iron;
 	}
-
 
 }
