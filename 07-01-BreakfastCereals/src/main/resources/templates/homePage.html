@@ -24,8 +24,6 @@
 				<tr>
 					<th>Manufacturer</th>
 					<th>Name</th>
-					<th>Calories</th>
-					<th>Fat</th>
 					<th>Links</th>
 				</tr>
 			</thead>
@@ -33,9 +31,11 @@
 				<tr th:each="cereal:${cereals}">
 					<td th:text="${cereal.manufacturer}"></td>
 					<td th:text="${cereal.name}"></td>
-					<td th:text="${cereal.calories}"></td>
-					<td th:text="${cereal.fat}"></td>
+					<td><a href="#" th:href="@{cereal/view/} + ${cereal.cerealId}">View</a> 
+                                   <a href="#" th:href="@{cereal/edit/} + ${cereal.cerealId}">Edit</a> 
+                                   <a href="#" th:href="@{cereal/delete/} + ${cereal.cerealId}">Delete</a> </td>
 					
+
 				</tr>
 			</tbody>
 		</table>
