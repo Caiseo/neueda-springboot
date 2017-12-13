@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div class="jumbotron">
+		<h1 th:each="titanic:${passenger}" th:text="${titanic.name}"></h1>
+	</div>
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Information</th>
+					<th>Values</th>
+										
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="titanic:${passenger}">
+				<td>Survived</td>
+				<td th:text="${titanic.survived}"></td>
+				</tr>
+				<tr th:each="titanic:${passenger}">
+				<td>Passenger Class</td>
+				<td th:text="${titanic.pclass}"></td>
+				</tr>
+				<tr th:each="titanic:${passenger}">
+				<td>Sex</td>
+				<td th:text="${titanic.sex}"></td>
+				</tr>					
+				<tr th:each="titanic:${passenger}">
+				<td>Age</td>
+				<td th:text="${titanic.age}"></td>
+				</tr>	
+				<tr th:each="titanic:${passenger}">
+				<td>Number of siblings / spouse on Board</td>
+				<td th:text="${titanic.sibSp}"></td>
+				</tr>	
+				<tr th:each="titanic:${passenger}">
+				<td>Number of parents / children on board</td>
+				<td th:text="${titanic.parch}"></td>
+				</tr>
+				<tr th:each="titanic:${passenger}">
+				<td>Ticket</td>
+				<td th:text="${titanic.ticket}"></td>
+				</tr>
+				<tr th:each="titanic:${passenger}">
+				<td>Fare</td>
+				<td th:text="${titanic.fare}"></td>
+				</tr>	
+				<tr th:each="titanic:${passenger}">
+				<td>Cabin</td>
+				<td th:text="${titanic.cabin}"></td>
+				</tr>
+				<tr th:each="titanic:${passenger}">
+				<td>Embarked</td>
+				<td th:text="${titanic.embarked}"></td>
+				</tr>
+				
+				
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

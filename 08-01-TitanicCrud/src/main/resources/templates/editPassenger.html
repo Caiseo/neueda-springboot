@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" />
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<!-- Custom Styles  -->
+<title th:text="${pageTitle}">Generic Page Title</title>
+</head>
+
+<body>
+	
+	<div class="jumbotron text-center">
+	<h1 th:each="titanic:${passenger}" th:text="${titanic.name}"></h1>
+
+		<h1 th:text="${title}">Create</h1>
+		<br />
+	</div>
+
+
+	<div class="container">
+
+		<form class="form-horizontal" th:action="@{/titanic/save}"
+			th:object="${titanic}" method="post">
+
+			<!-- hidden field is important! -->
+			<input type="hidden" th:field="${titanic.passengerId}" />
+
+			<label class="col-md-2">Name</label>
+			<div class="form-group">
+				
+				
+				<div class="col-md-10 control-label">
+					<input type="text" class="form-control"
+						th:field="${titanic.name}" /> <span
+						th:if="${#fields.hasErrors('name')}"
+						th:errors="*{name}" th:class="help-block">Name
+						Errors</span>
+			
+				</div>
+			</div>
+
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Information</th>
+						<th>Values</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+					<tr>
+						<td>Survived</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.survived}" /></td>
+					</tr>
+					<tr>
+						<td>PClass</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.pclass}" /></td>
+					</tr>					
+					<tr>
+						<td>Sex</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.sex}" /></td>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.age}" /></td>
+					</tr>
+					<tr>
+						<td>SibSp</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.sibSp}" /></td>
+					</tr>
+					<tr>
+						<td>Parch</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.parch}" /></td>
+					</tr>
+					<tr>
+						<td>Ticket</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.ticket}" /></td>
+					</tr>
+					<tr>
+						<td>Fare</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.fare}" /></td>
+					</tr>
+					<tr>
+						<td>Cabin</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.cabin}" /></td>
+					</tr>
+					<tr>
+						<td>Embarked</td>
+						<td><input type="text" class="form-control"
+							th:field="${titanic.embarked}" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+	</div>
+</body>
+</html>

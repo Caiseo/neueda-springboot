@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<nav th:replace="layout/nav :: navFragment"></nav>
+
+	<div class="jumbotron">
+		<h1>Passenger</h1>
+	</div>
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Passenger Name</th>
+					<th>Age</th>
+					<th>Links</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="titanic:${passengers}">
+					<td th:text="${titanic.name}"></td>
+					<td th:text="${titanic.age}"></td>
+					<td><a href="#" th:href="@{titanic/view/} + ${titanic.passengerId}">View</a>
+						<a href="#" th:href="@{titanic/edit/} + ${titanic.passengerId}">Edit</a>
+						<a href="#" th:href="@{titanic/delete/} + ${titanic.passengerId}">Delete</a>
+						</td>
+
+
+				</tr>
+			</tbody>
+		</table>
+		<a href="/titanic/add/" class="btn btn-secondary btn-lg active"
+			role="button" aria-pressed="true">Add</a>
+	</div>
+</body>
+</html>

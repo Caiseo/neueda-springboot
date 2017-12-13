@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav th:replace="layout/nav :: navFragment"></nav>
+
+<div class = "jumbotron text-center">
+<img src= "titanic centre.jpg" height = "150" width = "150" />
+<h1> Visitor Website for The Titanic Belfast </h1>
+
+<div class="container">
+  
+  <button type="button" class="btn btn-primary">Explore</button>
+  <button type="button" class="btn btn-primary">Visitor Info</button>
+  <button type="button" class="btn btn-primary">Discover</button>
+  <button type="button" class="btn btn-primary">Weddings</button>
+  <button type="button" class="btn btn-primary">Plan your event</button>
+  <button type="button" class="btn btn-primary">Learning </button>
+  <button type="button" class="btn btn-primary">Social</button>
+  <button type="button" class="btn btn-primary">Facts</button>
+</div>
+
+
+<img src= "titanic visitor centre.jpeg" height = "450" width = "789" />
+<img src = "titanic.jpg" height = "450" width = "789" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Visitor Information</h3>
+      <p>Learn about the centre</p>
+      <p>Directions</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Plan your Event</h3>
+      <p>Exhibits</p>
+      <p>Social</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Buy Tickets</h3> 
+      <p>Group Bookings</p>
+      <p>Learning</p>
+    </div>
+  </div>
+</div>
+
+
+    
+  </div>
+
+</body>
+</html>
