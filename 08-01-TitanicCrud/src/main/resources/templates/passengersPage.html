@@ -21,15 +21,19 @@
 		<h1>Passenger</h1>
 	</div>
 	<div class="container">
+	<input class="form-control" id="myInput" type="text" placeholder="Search.."></input>
+	<a href="/titanic/add/" class="btn btn-primary btn-lg active"
+			role="button" aria-pressed="true">Add</a>
 		<table class="table table-striped">
-			<thead>
+		       <tbody id="passengerTable">
+			
 				<tr>
 					<th>Passenger Name</th>
 					<th>Age</th>
 					<th>Links</th>
 				</tr>
-			</thead>
-			<tbody>
+			
+			
 				<tr th:each="titanic:${passengers}">
 					<td th:text="${titanic.name}"></td>
 					<td th:text="${titanic.age}"></td>
@@ -42,8 +46,20 @@
 				</tr>
 			</tbody>
 		</table>
-		<a href="/titanic/add/" class="btn btn-secondary btn-lg active"
+		<a href="/titanic/add/" class="btn btn-primary btn-lg active"
 			role="button" aria-pressed="true">Add</a>
+		
 	</div>
 </body>
+<script>
+$(document).ready(function(){
+	  $("#myInput").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $("#passengerTable tr").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+	});
+
+</script>
 </html>

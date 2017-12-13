@@ -48,15 +48,15 @@ public class HomeController {
 
 	}
 
-//	@GetMapping("/titanic/delete/{passengerId}")
-//	public String deleteCereal(@PathVariable("passengerId") Integer passengerId, 
-//			RedirectAttributes redirectAttrs) {
-//
-//		passengerRepository.delete(passengerId);
-//		redirectAttrs.addFlashAttribute("message", "Passenger was deleted");
-//		return "redirect:/";
-//
-//	}
+	@GetMapping("/titanic/delete/{passengerId}")
+	public String deleteCereal(@PathVariable("passengerId") Integer passengerId, 
+			RedirectAttributes redirectAttrs) {
+
+		passengerRepository.delete(passengerId);
+		redirectAttrs.addFlashAttribute("message", "Passenger was deleted");
+		return "redirect:/passengersPage";
+
+	}
 
 	@GetMapping("/titanic/add")
 	public String createPassenger(Model model) {
@@ -66,30 +66,21 @@ public class HomeController {
 
 	}
 	
+
 	@PostMapping("/titanic/save")
-	public String savePassenger( Titanic passenger,Model model) {
+	public String savePassenger(@Valid Titanic passenger, BindingResult bindingResult, Model model) {
 
-		
-		Titanic savedPassenger = passengerRepository.save(passenger);
-		return "redirect:/titanic/view/" + savedPassenger.getPassengerId();
+		if(bindingResult.hasErrors()) {
+			return "editPassenger";
+
+		} else {
+
+			Titanic savedPassenger = passengerRepository.save(passenger);
+			return "redirect:/titanic/view/" + savedPassenger.getPassengerId();
 
 
+		}	
 	}
-
-//	@PostMapping("/titanic/save")
-//	public String savePassenger(@Valid Titanic passenger, BindingResult bindingResult, Model model) {
-//
-//		if(bindingResult.hasErrors()) {
-//			return "editPassenger";
-//
-//		} else {
-//
-//			Titanic savedPassenger = passengerRepository.save(passenger);
-//			return "redirect:/titanic/view/" + savedPassenger.getPassengerId();
-//
-//
-//		}	
-//	}
 }
 
 
