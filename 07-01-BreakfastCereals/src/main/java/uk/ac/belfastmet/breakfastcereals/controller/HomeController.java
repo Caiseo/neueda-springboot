@@ -37,7 +37,7 @@ public class HomeController {
 
 	}
 	
-	@GetMapping("/cereal/edit/cerealId")
+	@GetMapping("/cereal/edit/{cerealId}")
 	public String editCereal(@PathVariable("cerealId") Integer cerealId, Model model) {
 		
 		model.addAttribute("pageTitle", "Edit Cereal");
@@ -45,7 +45,7 @@ public class HomeController {
 		return "editCereal";
 }
 	
-	@GetMapping("/cereal/delete/cerealId")
+	@GetMapping("/cereal/delete/{cerealId}")
 	public String deleteCereal(@PathVariable("cerealId") Integer cerealId) {
 		
 		cerealRepository.delete(cerealId);
@@ -62,10 +62,6 @@ public class HomeController {
 	}
 	
 	
-	
-	
-	
-
 	@PostMapping("/cereal/save")
 	public String saveCereal(@Valid Cereal cereal, BindingResult bindingResult, Model model) {
 
