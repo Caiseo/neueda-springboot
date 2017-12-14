@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<div class="jumbotron">
+		<h1 th:each="rhi:${boiler}" th:text="${rhi.name}"></h1>
+	</div>
+	<div class="container">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Information</th>
+					<th>Values</th>
+										
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="rhi:${boiler}">
+				<td>Date of Application</td>
+				<td th:text="${rhi.date}"></td>
+				</tr>
+				<tr th:each="rhi:${boiler}">
+				<td>Business or Installation Location</td>
+				<td th:text="${rhi.location}"></td>
+				</tr>
+				<tr th:each="rhi:${boiler}">
+				<td>Technology Type Installation</td>
+				<td th:text="${rhi.installation}"></td>
+				</tr>					
+				<tr th:each="rhi:${boiler}">
+				<td>Boiler Capacity </td>
+				<td th:text="${rhi.capacity}"></td>
+				</tr>	
+				<tr th:each="rhi:${boiler}">
+				<td>Amount of Payments made to 28th Febuary 2017</td>
+				<td th:text="${rhi.payment}"></td>
+				</tr>	
+				
+				
+				
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
