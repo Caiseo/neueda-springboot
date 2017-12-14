@@ -65,20 +65,20 @@ public class HomeController {
 
 		boilerRepository.delete(boilerId);
 		redirectAttrs.addFlashAttribute("message", "Boiler was deleted");
-		return "redirect:/viewBoiler";
+		return "redirect:/Boilerpage";
 
 	}
 
-	@GetMapping("/titanic/add")
+	@GetMapping("/rhi/add")
 	public String createBoiler(Model model) {
 		model.addAttribute("pageTitle", "Add Boiler");
-		model.addAttribute("titanic", new Rhi());
+		model.addAttribute("rhi", new Rhi());
 		return "editBoiler";
 
 	}
 	
 
-	@PostMapping("/titanic/save")
+	@PostMapping("/rhi/save")
 	public String saveBoiler(@Valid Rhi rhi, BindingResult bindingResult, Model model) {
 
 		if(bindingResult.hasErrors()) {
@@ -87,7 +87,7 @@ public class HomeController {
 		} else {
 
 			Rhi savedBoiler = boilerRepository.save(rhi);
-			return "redirect:/boiler/view/" + savedBoiler.getBoilerId();
+			return "redirect:/rhi/view/" + savedBoiler.getBoilerId();
 
 		}	
 	}
