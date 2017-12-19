@@ -5,7 +5,7 @@ public class WhaleWatcher {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		ArrayList Whales = new ArrayList<Whale>();
+		ArrayList <Whale> Whales = new ArrayList<Whale>();
 		
 		Whale whale1 = new Whale ();
 		whale1.setName("Right");
@@ -52,11 +52,43 @@ public class WhaleWatcher {
        int sum = 0; 
        for (int i = 0; i < intArray.length; i++){ 
          sum = sum + intArray[i];     }
-       double average = sum / intArray.length; 
+       double average = sum / intArray.length;  
          System.out.println("\nThe average length of all the whales is: " + average); 
 		
-		
+         //atlantic whales
+         System.out.println("---Atlantic Whales---");
+         for(Whale whale: Whales)
+         {
+                if (whale.getMainOcean().equals("Atlantic"))
+                {
+                       System.out.println(whale.getName());
+                }
+         }
+         System.out.println();
+         
+
+         //fastest whale
+          System.out.println("---Fastest Whale---");
+          Whale fastestWhale = Whales.get(0);
+          for(Whale whale: Whales)
+          {
+                if(whale.getMaxSpeed() > fastestWhale.getMaxSpeed())
+                {
+                       fastestWhale = whale;
+                }
+          }
+          System.out.println(fastestWhale.getName());
+          System.out.println();
+          
+          
+
+       
+          }
+ 
+ 
+
+
 	}
 
 		
-}
+
