@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<nav th:replace="layout/nav :: navFragment"></nav>
+
+	<div class="jumbotron text-center">
+		<h1>London Weather</h1>
+		<img src= "westminster.jpg" height = "350" width = "750" />
+		<img src= "tower.jpg" height = "350" width = "750" />
+	</div>
+	
+	<div class="container">
+	
+		<div class="alert alert-success" role="alert" th:if="${message}">
+			<p th:text="${message}"></p>
+			
+		</div>
+
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Description</th>
+					<th>Precipitation</th>
+					<th>Temperature</th>
+					<th>Humidity</th>
+					<th>Pressure</th>
+					<th>Cloud cover</th>
+					<th>Wind</th>
+					<th>Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="weather:${weather}">
+					<td th:text="${weather.description}"></td>
+					<td th:text="${weather.precipitation}"></td>
+					<td th:text="${weather.temperature}"></td>
+					<td th:text="${weather.humidity}"></td>
+					<td th:text="${weather.pressure}"></td>
+					<td th:text="${weather.cloudcover}"></td>
+					<td th:text="${weather.wind}"></td>
+					<td> <img src ="" th:src="${weather.image}" width="100px" height="100px"/></td>
+					
+					
+
+				</tr>
+			</tbody>
+		</table>
+		<a href="/cereal/add/" class="btn btn-secondary btn-lg active"
+			role="button" aria-pressed="true">Add</a>
+	</div>
+
+</body>
+</html>
