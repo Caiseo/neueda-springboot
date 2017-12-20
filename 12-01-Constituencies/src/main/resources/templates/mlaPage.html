@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+ <html lang="en" xmlns:th="http://thymeleaf.org">
+ <head>
+ <link rel="stylesheet"
+ 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+ <script
+ 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script
+ 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+ <script
+ 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+ 
+ 
+ <title th:text="${pageTitle}">Generic Page Title</title>
+ </head>
+ <body>
+ 
+
+ 
+ 	<div class="jumbotron bg-success" align="center">
+ 		<h1> Members of the Local Assembly</h1>
+ 	</div>
+ 	
+ 	<a class="btn btn-success" href="#" th:href="@{/}">Back</a>
+ 
+ 	<table th:each="member : ${members}" class="table table-bordered table-success">
+ 		<tbody>
+ 			
+ 			
+ 			<tr>
+ 				<th class = "w-25">Member First name</th>
+ 				<td class = "w-75" th:text="${member.memberFirstName}"></td>
+ 			</tr>
+ 			<tr  >
+ 				<th class = "w-25">Member Surname</th>
+ 				<td class = "w-75" th:text="${member.memberLastName}"></td>
+ 			</tr>
+ 			<tr >
+ 				<th class = "w-25">Members Political Party</th>
+ 				<td class = "w-75" th:text="${member.partyName}"></td>
+ 			</tr>
+ 			<tr>
+ 				<th class = "w-25">MLA Picture</th>
+ 				<td class = "w-75"><img src="" th:src="${member.image}" /></td>
+ 			</tr>
+ 
+ 			
+ 
+ 
+ 		</tbody>
+ 	</table>
+ 
+ <br />
+ 
+ 
+ 
+ 
+ 
+ </body>
+
+ </html> 
