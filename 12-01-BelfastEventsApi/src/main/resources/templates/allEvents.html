@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<nav th:replace="layout/nav :: navFragment"></nav>
+
+
+	<div class="jumbotron" align="center">
+		<h2>Belfast Events</h2>
+	</div>
+
+
+
+	<table th:each="event : ${event}"
+		class="table table-bordered table-dark">
+		<tbody>
+
+			<tr>
+				<th>Event ID</th>
+				<td th:text="${event.identifier}"></td>
+			</tr>
+
+			<tr>
+				<th>Event Title</th>
+				<td th:text="${event.title}"></td>
+			</tr>
+			<tr>
+				<th>Start Date</th>
+				<td th:text="${#dates.format(event.startDate, 'dd-MM-yyyy')}"></td>
+			</tr>
+
+			<tr>
+				<th>venue</th>
+				<td th:text="${event.venue}"></td>
+			</tr>
+
+			<tr>
+				<th>Image</th>
+				<td><img src="" th:src="${event.image}" /></td>
+			</tr>
+			
+			<tr>
+				<th>Event Theme</th>
+				<td th:text="${event.theme}"></td>
+			</tr>
+			<tr>
+				<th>Event Cost</th>
+				<td th:text="${event.cost}"></td>
+			</tr>
+
+
+			<tr>
+				<td colspan="5" align="center"><a class="btn btn-success"
+					href="#" th:href="@{/showEvents/} + ${event.identifier}">More
+						Information</a></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+	<br />
+
+
+
+
+
+</body>
+
+</html>
+
+
+
